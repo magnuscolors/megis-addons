@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- show supplier_invoice_number in invoice tree -->
+        <record id="invoice_treewh1" model="ir.ui.view">
+            <field name="name">account.invoice.tree.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <data>
+		    <field name="user_id" position="after">
+			<field name="supplier_invoice_number"/>
+		    </field>
+		    <field name="origin" position="replace"/>
+		    <field name="partner_id" position="after">
+			<field name="name"/>
+		    </field>
+		</data>
+            </field>
+        </record>
+        <!-- make supplier_invoice_number and account_analytic_id required -->
+        <record id="invoice_supplier_formwh1" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                    <data>
+			<xpath expr="//group/field[@name='supplier_invoice_number']" position="replace">
+                            <field name="supplier_invoice_number" required="1" groups="account.group_account_invoice"/>
+			    <field name="name" />
+                        </xpath>		    
+			<xpath
+			    expr="//field[@name='invoice_line']/tree/field[@name='account_analytic_id']"
+			    position="replace">
+                            <field name="account_analytic_id" groups="analytic.group_analytic_accounting"
+                                domain="[('type','!=','view'), ('company_id', '=', parent.company_id)]" required="1"/>
+                        </xpath>
+			<xpath
+			    expr="//page[@string='Other Info']/group/group/field[@name='name']" position="replace">
+                        </xpath>
+                    </data>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
+
