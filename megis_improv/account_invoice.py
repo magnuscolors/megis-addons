@@ -25,11 +25,17 @@ from openerp.tools.translate import _
 
 
 class account_invoice(osv.osv):
-    """ Inherits invoice makes 'invoice.name' visible and adds unique SQL constraint for supplier_invoice_number """
+    """ Inherits invoice makes 'invoice.name' visible, 'type' readonly=False  and adds unique SQL constraint for supplier_invoice_number """
     _inherit = 'account.invoice'
     
     _columns = {
         'name': fields.char('Description', size=64, select=True, readonly=True, states={'draft':[('readonly',False)],'open':[('readonly',False)]}),
+        'type': fields.selection([
+            ('out_invoice','Customer Invoice'),
+            ('in_invoice','Supplier Invoice'),
+            ('out_refund','Customer Refund'),
+            ('in_refund','Supplier Refund'),
+            ],'Type', readonly=False, select=True, change_default=True, track_visibility='always'),
     }
     
     _sql_constraints = [

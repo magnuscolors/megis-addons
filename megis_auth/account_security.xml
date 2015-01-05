@@ -7,7 +7,16 @@
         <field name="category_id" ref="base.module_category_accounting_and_finance"/>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
     </record>
-    
+    <record id="megis_auth.authorize" model="res.groups">
+        <field name="name">Betaling Fiattering</field>
+        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+    </record>
+    <record id="account.group_account_manager" model="res.groups">
+        <field name="name">Financial Manager</field>
+        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="implied_ids" eval="[(4, ref('account.group_account_user'))]"/>
+        <field name="implied_ids" eval="[(4, ref('megis_auth.authorize'))]"/>
+    </record>
     
     <menuitem name="Finance"
                 id="account.menu_finance"
@@ -33,8 +42,8 @@
     
     <record model="ir.rule" id="domain_open_auth_paid_rule">
         <field name="name">Posted Invoice</field>
-        <field name="domain_force">[('state','in',['open','auth','paid'])]</field>
         <field name="model_id" ref="model_account_invoice"/>
+        <field name="domain_force">['&amp;','|',('section_id.member_ids', '=', user.id),('user_id','=',user.id),('state','in',['open','auth','paid'])]</field>
         <field name="global" eval="False"/>
         <field name="perm_read" eval="True"/>
         <field name="perm_write" eval="True"/>

@@ -24,7 +24,7 @@
             res_model="account.invoice.author" src_model="account.invoice"
             view_mode="form" target="new" view_type="form"
             view_id="account_invoice_author_view"
-            groups="account.group_account_user"/>
+            groups="megis_auth.authorize"/>
 
         
 

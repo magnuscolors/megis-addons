@@ -52,12 +52,12 @@ class account_invoice(osv.osv):
         'payment_term': fields.many2one('account.payment.term', 'Payment Terms',readonly=True, states={'draft':[('readonly',False)]},
             help="If you use payment terms, the due date will be computed automatically at the generation "\
                 "of accounting entries. If you keep the payment term and the due date empty, it means direct payment. "\
-                "The payment term may compute several due dates, for example 50% now, 50% in one month.", groups="account.group_account_invoice"),
+                "The payment term may compute several due dates, for example 50% now, 50% in one month.",),# groups="account.group_account_invoice"),
         'user_id': fields.many2one('res.users', 'Salesperson', readonly=True, track_visibility='onchange', states={'draft':[('readonly',False)],'open':[('readonly',False)]}),
-        'reference': fields.char('Invoice Reference', size=64, help="The partner reference of this invoice.", groups="account.group_account_invoice"),
+        'reference': fields.char('Invoice Reference', size=64, help="The partner reference of this invoice.",),# groups="account.group_account_invoice"),
         'amount_to_pay': fields.related('residual',
             type='float', string='Amount to be paid',
-            help='The amount which should be paid at the current date.', groups="account.group_account_invoice"),
+            help='The amount which should be paid at the current date.',),# groups="account.group_account_invoice"),
     }    
         
         
@@ -65,8 +65,7 @@ class account_invoice(osv.osv):
     def action_date_assign(self, cr, uid, ids, *args):
         for inv in self.browse(cr, uid, ids):
             if not inv.date_due:
-                res = self.onchange_payment_term_date_invoice(cr, uid, inv.id,
-                                                              inv.payment_term.id, inv.date_invoice)
+                res = self.onchange_payment_term_date_invoice(cr, uid, inv.id, inv.payment_term.id, inv.date_invoice)
                 if res and res['value']:
                     self.write(cr, uid, [inv.id], res['value'])
         return True

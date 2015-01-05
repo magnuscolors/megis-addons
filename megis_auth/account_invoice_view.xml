@@ -31,10 +31,10 @@
                                 on_change="onchange_account_id(product_id, parent.partner_id, parent.type, parent.fiscal_position,account_id)"/>
                     </xpath>
 		    <xpath expr="//header/button[@name='invoice_open']" position="after">
-			<button name="invoice_auth" states="open" string="Authorize" class="oe_highlight" groups="account.group_account_user"/>
+			<button name="invoice_auth" states="open" string="Authorize" class="oe_highlight" groups="megis_auth.authorize"/>
                     </xpath>
 		    <xpath expr="//header/button[@name='invoice_auth']" position="after">
-                        <button name="unauthorize" states="auth" string="Re-open" class="oe_highlight" groups="account.group_account_user"/>
+                        <button name="unauthorize" states="auth" string="Re-open" class="oe_highlight" groups="megis_auth.authorize"/>
                     </xpath>
                     <xpath expr="//header/button[@name='%(account.action_account_invoice_refund)d']" position="replace">
                         <button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' states='open,auth,paid' groups="account.group_account_invoice"/>
