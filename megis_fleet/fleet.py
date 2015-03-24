@@ -32,7 +32,7 @@ def str_to_datetime(strdate):
 
 
 class fleet_vehicle(osv.Model):
-""" Inherits fleet.vehicle to change driver_id many2one in many2many hr_employee"""
+    """ Inherits fleet.vehicle to change driver_id many2one in many2many hr_employee"""
     _inherit = 'fleet.vehicle'
     
 
