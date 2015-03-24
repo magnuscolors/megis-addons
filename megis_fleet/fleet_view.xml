@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model='ir.ui.view' id='fleet_vehicle_form'>
+            <field name="name">fleet.vehicle.form</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_form"/>
+            <field name="arch" type="xml">
+                <field name="driver_id" position="after">
+                    <field name="driver_ids" string="Bestuurders"/>
+                </field>
+                               
+            </field>
+        </record>
+    </data>
+</openerp>

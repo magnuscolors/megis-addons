@@ -40,7 +40,8 @@ This module creates history of employees and leased cars in OpenERP Fleet Manage
     'website' : 'http://www.magnus.nl',
     'depends' : ['fleet'
     ],
-    'data' : [],
+    'data' : ['fleet_view.xml'
+    ],
     'demo' : [],
     'installable': True
 }
