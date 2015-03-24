@@ -43,7 +43,7 @@ class fleet_vehicle(osv.Model):
         }
     
 class vehicle_employee_rel(osv.Model):
-    _name = "driver.employee.rel"
+    _name = "vehicle.employee.rel"
     _rec_name = "vehicle_id"
     _columns = {
         'employee_id': fields.many2one('hr.employee', 'Employee', ondelete='cascade'),
