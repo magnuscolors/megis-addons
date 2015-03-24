@@ -39,5 +39,15 @@ class fleet_vehicle(osv.Model):
     
     _columns = {
         
-        'driver_ids': fields.many2many('hr.employee','driver_employee_rel','employee_id','driver_id','Drivers', help='Drivers of the vehicle'),
+        'driver_ids': fields.many2many('hr.employee','vehicle_employee_rel','vehicle_id','driver_id','Drivers', help='Drivers of the vehicle'),
         }
+    
+class vehicle_employee_rel(osv.Model):
+    _name = "driver.employee.rel"
+    _rec_name = "vehicle_id"
+    _columns = {
+        'employee_id': fields.many2one('hr.employee', 'Employee', ondelete='cascade'),
+        'vehicle_id': fields.many2one('fleet.vehicle', 'Voertuig', ondelete='cascade'),
+        'date_start': fields.date('Date Start', required=True, help='Date when the driver received the vehicle'),
+        'date_end': fields.date('Date End', required=False, help='Date when the driver returned the vehicle'),
+    }
