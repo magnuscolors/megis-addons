@@ -36,7 +36,7 @@ class vehicle_employee_rel(osv.Model):
     _columns = {
         'driver_id': fields.many2one('hr.employee', 'Employee', ondelete='cascade'),
         'vehicle_id': fields.many2one('fleet.vehicle', 'Voertuig', ondelete='cascade'),
-        'date_start': fields.date('Date Start', required=True, help='Date when the driver received the vehicle'),
+        'date_start': fields.date('Date Start', required=False, help='Date when the driver received the vehicle'),
         'date_end': fields.date('Date End', required=False, help='Date when the driver returned the vehicle'),
     }
 
