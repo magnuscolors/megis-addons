@@ -30,24 +30,20 @@ from dateutil.relativedelta import relativedelta
 def str_to_datetime(strdate):
     return datetime.datetime.strptime(strdate, tools.DEFAULT_SERVER_DATE_FORMAT)
 
-
-class fleet_vehicle(osv.Model):
-    """ Inherits fleet.vehicle to change driver_id many2one in many2many hr_employee"""
-    _inherit = 'fleet.vehicle'
-    
-
-    
-    _columns = {
-        
-        'driver_ids': fields.many2many('hr.employee','vehicle_employee_rel','vehicle_id','driver_id','Drivers', help='Drivers of the vehicle'),
-        }
-    
 class vehicle_employee_rel(osv.Model):
     _name = "vehicle.employee.rel"
     _rec_name = "vehicle_id"
     _columns = {
-        'employee_id': fields.many2one('hr.employee', 'Employee', ondelete='cascade'),
+        'driver_id': fields.many2one('hr.employee', 'Employee', ondelete='cascade'),
         'vehicle_id': fields.many2one('fleet.vehicle', 'Voertuig', ondelete='cascade'),
         'date_start': fields.date('Date Start', required=True, help='Date when the driver received the vehicle'),
         'date_end': fields.date('Date End', required=False, help='Date when the driver returned the vehicle'),
     }
+
+class fleet_vehicle(osv.Model):
+    """ Inherits fleet.vehicle to change driver_id many2one in many2many hr_employee"""
+    _inherit = 'fleet.vehicle'
+    _columns = { 
+        'driver_ids': fields.many2many('hr.employee','vehicle_employee_rel','vehicle_id','driver_id','Drivers', help='Drivers of the vehicle'),
+        }
+    
