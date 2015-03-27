@@ -8,14 +8,15 @@
             <field name="arch" type="xml">
 		<data>
                     <xpath expr="//group/group/field[@name='driver_id']" position="after">
-                        <field colspan="4" name="driver_ids" nolabel="1" widget="one2many_list">
+                        <field name="driver_ids"/>
+                        <!--field colspan="4" name="driver_ids" nolabel="1" widget="one2many_list">
                             <form string="Drivers" version="7.0">
                         	<group col="4">
                                     <field name="driver_id"/>
                                     <field name="date_start"/>
                                     <field name="date_end"/>
                         	</group>
-                            </form>
+                            </form-->
 			</field>
                     </xpath>	
 		</data>	
