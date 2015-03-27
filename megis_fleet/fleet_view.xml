@@ -16,8 +16,8 @@
                                     <field name="date_start"/>
                                     <field name="date_end"/>
                         	</group>
-                            </form-->
-			</field>
+                            </form>
+			</field-->
                     </xpath>	
 		</data>	
             </field>
