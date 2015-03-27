@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="fleet.fleet_vehicle_form"/>
             <field name="arch" type="xml">
 		<data>
-                    <field name="driver_id" position="after">
+                    <xpath expr="//group/group/field[@name='driver_id']" position="after">
                         <field colspan="4" name="driver_ids" nolabel="1" widget="one2many_list">
                             <form string="Drivers" version="7.0">
                         	<group col="4">
@@ -17,7 +17,7 @@
                         	</group>
                             </form>
 			</field>
-                    </field>
+                    </xpath>	
 		</data>	
             </field>
         </record>
