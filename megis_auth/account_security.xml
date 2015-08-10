@@ -35,7 +35,7 @@
      
      <menuitem id="account.menu_action_invoice_tree2"
                action="account.action_invoice_tree2" parent="account.menu_finance_payables"
-               groups="account.group_account_invoice,megis_auth.goedk_facturen"/>
+               groups="account.group_account_invoice"/>
      
 </data>
 <data noupdate="0">
