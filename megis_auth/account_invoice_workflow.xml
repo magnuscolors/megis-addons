@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <!--record id="act_open" model="workflow.activity">
-            <field name="wkf_id" ref="account.wkf"/>
-            <field name="name">open</field>
-            <field name="action">action_move_create()
-action_number()
-invoice_validate()</field>
-            <field name="kind">function</field>
-        </record-->
         
         <record id="act_auth" model="workflow.activity">
             <field name="wkf_id" ref="account.wkf"/>
             <field name="name">auth</field>
             <field name="action">write({'state':'auth'})</field>
-            <!--field name="action">invoice_authorize() </field-->   
             <field name="kind">function</field>
         </record>
         
