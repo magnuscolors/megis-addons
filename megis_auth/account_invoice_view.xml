@@ -82,9 +82,7 @@
 		            </xpath>
                     <xpath expr="//search/filter[@name='draft']" position="after">
 			            <filter name="open" string="Open Invoices" domain="[('state','=','open')]" help="Open Invoices"/>
-                    </xpath>
-                    <xpath expr="//search/filter[@name='invoices']" position="before">
-			            <filter name="open" string="Authorized" domain="[('state','=','auth')]" help="Authorized Invoices"/>
+                        <filter name="auth" string="Authorized" domain="[('state','=','auth')]" help="Authorized Invoices"/>
                     </xpath>
 		            <xpath expr="//search/filter[@name='unpaid']" position="after">
 			            <filter name="paid" string="Paid" domain="[('state','=',['paid'])]" help="Paid Invoices"/>
