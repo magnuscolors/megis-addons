@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+            <record model="ir.ui.view" id="crm_case_form_view_oppor_tph">
+                <field name="name">Opportunities</field>
+                <field name="model">crm.lead</field>
+                <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+                <field name="arch" type="xml">
+                    <data>
+                        <label for="planned_revenue" position="replace">
+                        </label>
+                        <field name="company_currency" position="replace">
+                        </field>
+                        <field name="planned_revenue" position="replace">
+                        </field>
+                        <span class="oe_grey" position="replace">
+                        </span>
+                        <field name="probability" position="replace">
+                        </field>
+                        <page string="Internal Notes" position="after">
+                           <page string="Revenue per Period">
+                             <group>
+                               <label for="planned_revenue" class="oe_edit_only"/>
+                                <h2>
+                                    <field name="company_currency" invisible="1"/>
+                                    <field name="planned_revenue" class="oe_inline" widget='monetary' options="{'currency_field': 'company_currency'}"/>
+                                    <span class="oe_grey"> at </span>
+                                    <field name="probability" class="oe_inline" widget="integer"/>%%
+                                </h2>
+                             </group>
+                             <group>
+                                 <field name="tph_date_start" />
+                                 <field name="tph_date_end" />
+                             </group>
+                                <field name="tph_revenue_line">
+                                <tree string="Period Revenue" editable="bottom">
+                                    <field name="period_id"/>
+                                    <field name="period_amount"/>
+                                    <field name="probability"/>
+                                </tree>
+                               </field>
+                           </page>
+                        </page>
+                    </data>
+                </field>
+           </record>
+   </data>
+</openerp>
