@@ -236,9 +236,4 @@ class account_invoice(osv.osv):
     
     def invoice_validate(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state':'open'}, context=context)
-        return True
-    
-#    def invoice_authorize(self, cr, uid, ids, context=None):
-#        self.write(cr, uid, ids, {'state':'auth'}, context=context)
-#        return True
-    
+        return super(account_invoice, self).invoice_validate(cr, uid, ids, context=context)
