@@ -43,7 +43,7 @@ voor de interface naar slam.
     'depends' : ['account',
                  'base_vat',
                  'base_iban',
-                 'account_chart',
+                 # 'account_chart', -- deep
                  'analytic'
     ],
     'data' : ['account_slam_view.xml'],

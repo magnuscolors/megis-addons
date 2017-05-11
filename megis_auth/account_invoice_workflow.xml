@@ -15,6 +15,7 @@
             <field name="trigger_model">account.move.line</field>
             <field name="trigger_expr_id">move_line_id_payment_get()</field>
             <field name="condition">test_paid()</field>
+
         </record>
         
         <record id="open_to_auth" model="workflow.transition">

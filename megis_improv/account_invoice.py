@@ -18,21 +18,27 @@
 ##############################################################################
 
 
-from openerp import netsvc
-from openerp import pooler
-from openerp.osv import fields, osv, orm
-from openerp.tools.translate import _
+# from openerp import netsvc
+# from openerp import pooler
+# from openerp.osv import fields, osv, orm
+# from openerp.tools.translate import _
+#
+#
+# class account_invoice(osv.osv):
+#     """ Inherits invoice makes 'invoice.name' visible and adds unique SQL constraint for supplier_invoice_number """
+#     _inherit = 'account.invoice'
+#
+#     _columns = {
+#         'name': fields.char('Description', size=64, select=True, readonly=True, states={'draft':[('readonly',False)],'open':[('readonly',False)]}),
+#     }
+#
+#     _sql_constraints = [
+#         ('number_uniq', 'unique(number, company_id, journal_id, type)', 'Invoice Number must be unique per Company!'),
+#         ('supplier_invoice_number_uniq', 'unique(supplier_invoice_number, partner_id)', 'Supplier Invoice Number must be unique for every supplier!'),
+#     ]
+#
 
-
-class account_invoice(osv.osv):
-    """ Inherits invoice makes 'invoice.name' visible and adds unique SQL constraint for supplier_invoice_number """
-    _inherit = 'account.invoice'
-    
-    _columns = {
-        'name': fields.char('Description', size=64, select=True, readonly=True, states={'draft':[('readonly',False)],'open':[('readonly',False)]}),
-    }
-    
-    _sql_constraints = [
-        ('number_uniq', 'unique(number, company_id, journal_id, type)', 'Invoice Number must be unique per Company!'),
-        ('supplier_invoice_number_uniq', 'unique(supplier_invoice_number, partner_id)', 'Supplier Invoice Number must be unique for every supplier!'),
-    ]
+# ----------------------------------------------------------------
+# Alternate OCA module: account_invoice_supplier_ref_unique
+# handles the supplier-invoice unique constraints
+# ----------------------------------------------------------------

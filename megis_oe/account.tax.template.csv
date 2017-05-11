@@ -1,35 +1,35 @@
-id,amount,applicable_type,base_code_id/id,base_sign,ref_base_sign,chart_template_id/id,domain,include_base_amount,description,type_tax_use,account_collected_id/id,parent_id/id,ref_base_code_id/id,account_paid_id/id,ref_tax_code_id/id,sequence,tax_code_id/id,ref_tax_sign,tax_sign,price_include,name,type,child_depend
-megis-oe.btw_21_buy,0.21,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,21% BTW ink,Purchase,megis-oe.vat_refund_high,,,megis-oe.vat_refund_high,megis-oe.btw_code_5b,5,megis-oe.btw_code_5b,-1.0,1.0,False,BTW te vorderen hoog (inkopen),Percent,False
-megis-oe.btw_21_buy_incl,0.21,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,21% BTW ink incl,Purchase,megis-oe.vat_refund_high,,,megis-oe.vat_refund_high,megis-oe.btw_code_5b,5,megis-oe.btw_code_5b,-1.0,1.0,True,BTW te vorderen hoog (inclusief),Percent,False
-megis-oe.btw_21,0.21,True,megis-oe.omz_code_1a,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,21% BTW verk,Sale,megis-oe.vat_payable_high,,megis-oe.omz_code_1a,megis-oe.vat_payable_high,megis-oe.btw_code_1a,5,megis-oe.btw_code_1a,-1.0,1.0,False,Verkopen/omzet hoog,Percent,False
-megis-oe.btw_0,,True,megis-oe.omz_code_1e,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,0% BTW verk,Sale,megis-oe.vat_payable0,,megis-oe.omz_code_1e,megis-oe.vat_payable0,,10,,-1.0,1.0,False,Verkopen/omzet onbelast (nul-tarief),Percent,False
-megis-oe.btw_6,0.06,True,megis-oe.omz_code_1b,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,6% BTW verk,Sale,megis-oe.vat_payable_low,,megis-oe.omz_code_1b,megis-oe.vat_payable_low,megis-oe.btw_code_1b,10,megis-oe.btw_code_1b,-1.0,1.0,False,Verkopen/omzet laag,Percent,False
-megis-oe.btw_6_buy,0.06,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,6% BTW ink,Purchase,megis-oe.vat_refund_low,,,megis-oe.vat_refund_low,megis-oe.btw_code_5b,10,megis-oe.btw_code_5b,-1.0,1.0,False,BTW te vorderen laag (inkopen),Percent,False
-megis-oe.btw_6_buy_incl,0.06,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,6% BTW ink incl,Purchase,megis-oe.vat_refund_low,,,megis-oe.vat_refund_low,megis-oe.btw_code_5b,10,megis-oe.btw_code_5b,-1.0,1.0,True,BTW te vorderen laag (inclusief),Percent,False
-megis-oe.btw_overig,0.21,True,megis-oe.omz_code_1a,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,variabel BTW verk,Sale,megis-oe.vat_payable_high,,megis-oe.omz_code_1c,megis-oe.vat_payable_high,megis-oe.btw_code_1c,15,megis-oe.btw_code_1a,-1.0,1.0,False,Verkopen/omzet overig,Percent,False
-megis-oe.btw_overig_buy,0.21,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,variabel BTW ink,Purchase,megis-oe.vat_refund_high,,,megis-oe.vat_refund_high,megis-oe.btw_code_5b,15,megis-oe.btw_code_5b,-1.0,1.0,False,BTW te vorderen overig (inkopen),Percent,False
-megis-oe.btw_verk_0,,True,megis-oe.omz_code_1e,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,0% BTW verlegd,Sale,megis-oe.vat_payable_verlegd,,megis-oe.omz_code_1e,megis-oe.vat_payable_verlegd,,15,,-1.0,1.0,False,BTW af te dragen verlegd (verkopen),Percent,False
-megis-oe.btw_ink_0,0.21,True,megis-oe.omz_code_2a,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,21% BTW verlegd,Purchase,megis-oe.vat_payable_verlegd,,megis-oe.omz_code_2a,megis-oe.vat_payable_verlegd,,15,,-1.0,1.0,False,BTW af te dragen verlegd (inkopen),Percent,True
-megis-oe.btw_X1,,True,megis-oe.omz_code_3a,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,BTW export buiten EU,Sale,megis-oe.vat_payable0,,megis-oe.omz_code_3a,megis-oe.vat_payable0,,20,,-1.0,1.0,False,Verkopen export buiten EU,Percent,False
-megis-oe.btw_I_6,0.06,True,megis-oe.omz_code_4b,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,6% BTW import binnen EU,Purchase,,,megis-oe.omz_code_4b,,,20,,-1.0,1.0,False,Inkopen import binnen EU laag,Percent,True
-megis-oe.btw_I_21,0.21,True,megis-oe.omz_code_4b,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,21% BTW import binnen EU,Purchase,,,megis-oe.omz_code_4b,,,20,,-1.0,1.0,False,Inkopen import binnen EU hoog,Percent,True
-megis-oe.btw_I_overig,,True,megis-oe.omz_code_4b,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,0% BTW import binnen EU,Purchase,,,megis-oe.omz_code_4b,,,20,,-1.0,1.0,False,Inkopen import binnen EU overig,Percent,True
-megis-oe.btw_X0,,True,megis-oe.omz_code_3b,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,BTW export binnen EU,Sale,megis-oe.vat_payable0,,megis-oe.omz_code_3b,megis-oe.vat_payable0,,20,,-1.0,1.0,False,Verkopen export binnen EU,Percent,False
-megis-oe.btw_X2,,True,megis-oe.omz_code_3c,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,Inst./afst.verkopen binnen EU,Sale,megis-oe.vat_payable0,,megis-oe.omz_code_3c,megis-oe.vat_payable0,,20,,-1.0,1.0,False,Installatie/afstandsverkopen binnen EU,Percent,False
-megis-oe.btw_E1,0.06,True,megis-oe.omz_code_4a,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,BTW import buiten EU,Purchase,,,megis-oe.omz_code_4a,,,20,,-1.0,1.0,False,Inkopen import buiten EU laag,Percent,True
-megis-oe.btw_E2,0.21,True,megis-oe.omz_code_4a,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,BTW import buiten EU,Purchase,,,megis-oe.omz_code_4a,,,20,,-1.0,1.0,False,Inkopen import buiten EU hoog,Percent,True
-megis-oe.btw_E_overig,0.21,True,megis-oe.omz_code_4a,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,BTW import buiten EU,Purchase,,,megis-oe.omz_code_4a,,,20,,-1.0,1.0,False,Inkopen import buiten EU overig,Percent,True
-megis-oe.btw_ink_0_1,1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_payable_verlegd,megis-oe.btw_ink_0,,megis-oe.vat_payable_verlegd,megis-oe.btw_code_2a,98,megis-oe.btw_code_2a,-1.0,1.0,False,BTW te vorderen verlegd (inkopen1),Percent,False
-megis-oe.btw_I_overig_2,1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_refund_high,megis-oe.btw_I_overig,,megis-oe.vat_refund_high,megis-oe.btw_code_5b,99,megis-oe.btw_code_5b,-1.0,1.0,False,Inkopen import binnen EU overig(2),Percent,False
-megis-oe.btw_E2_2,1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_refund_high,megis-oe.btw_E2,,megis-oe.vat_refund_high,megis-oe.btw_code_5b,99,megis-oe.btw_code_5b,-1.0,1.0,False,Inkopen import buiten EU hoog(2),Percent,False
-megis-oe.btw_E_overig_1,-1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_payable_high,megis-oe.btw_E_overig,,megis-oe.vat_payable_high,megis-oe.btw_code_4a,99,megis-oe.btw_code_4a,-1.0,1.0,False,Inkopen import buiten EU overig(1),Percent,False
-megis-oe.btw_E1_1,-1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_payable_low,megis-oe.btw_E1,,megis-oe.vat_payable_low,megis-oe.btw_code_4a,99,megis-oe.btw_code_4a,-1.0,1.0,False,Inkopen import buiten EU laag(1),Percent,False
-megis-oe.btw_ink_0_2,-1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_payable_verlegd,megis-oe.btw_ink_0,,megis-oe.vat_payable_verlegd,megis-oe.btw_code_5b,99,megis-oe.btw_code_5b,1.0,-1.0,False,BTW af te dragen verlegd (inkopen2),Percent,False
-megis-oe.btw_E1_2,1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_refund_low,megis-oe.btw_E1,,megis-oe.vat_refund_low,megis-oe.btw_code_5b,99,megis-oe.btw_code_5b,-1.0,1.0,False,Inkopen import buiten EU laag(2),Percent,False
-megis-oe.btw_I_6_1,-1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_payable_low,megis-oe.btw_I_6,,megis-oe.vat_payable_low,megis-oe.btw_code_4b,99,megis-oe.btw_code_4b,-1.0,1.0,False,Inkopen import binnen EU laag(1),Percent,False
-megis-oe.btw_I_6_2,1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_refund_low,megis-oe.btw_I_6,,megis-oe.vat_refund_low,megis-oe.btw_code_5b,99,megis-oe.btw_code_5b,-1.0,1.0,False,Inkopen import binnen EU laag(2),Percent,False
-megis-oe.btw_E_overig_2,1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_refund_high,megis-oe.btw_E_overig,,megis-oe.vat_refund_high,megis-oe.btw_code_5b,99,megis-oe.btw_code_5b,-1.0,1.0,False,Inkopen import buiten EU overig(2),Percent,False
-megis-oe.btw_I_21_1,-1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_payable_high,megis-oe.btw_I_21,,megis-oe.vat_payable_high,megis-oe.btw_code_4b,99,megis-oe.btw_code_4b,-1.0,1.0,False,Inkopen import binnen EU hoog(1),Percent,False
-megis-oe.btw_I_21_2,1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_refund_high,megis-oe.btw_I_21,,megis-oe.vat_refund_high,megis-oe.btw_code_5b,99,megis-oe.btw_code_5b,-1.0,1.0,False,Inkopen import binnen EU hoog(2),Percent,False
-megis-oe.btw_I_overig_1,-1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_payable_high,megis-oe.btw_I_overig,,megis-oe.vat_payable_high,megis-oe.btw_code_4b,99,megis-oe.btw_code_4b,-1.0,1.0,False,Inkopen import binnen EU overig(1),Percent,False
-megis-oe.btw_E2_1,-1.0,True,,1.0,-1.0,megis-oe.megis-oe_chart_template,,False,,Purchase,megis-oe.vat_payable_high,megis-oe.btw_E2,,megis-oe.vat_payable_high,megis-oe.btw_code_4a,99,megis-oe.btw_code_4a,-1.0,1.0,False,Inkopen import buiten EU hoog(1),Percent,False
+id,amount,chart_template_id/id,include_base_amount,description,type_tax_use,sequence,price_include,name,amount_type
+megis-oe.btw_21_buy,0.21,megis-oe.megis-oe_chart_template,False,21% BTW ink,Purchases,5,False,BTW te vorderen hoog (inkopen)*,Percentage of Price
+megis-oe.btw_21_buy_incl,0.21,megis-oe.megis-oe_chart_template,False,21% BTW ink incl,Purchases,5,True,BTW te vorderen hoog (inclusief),Percentage of Price
+megis-oe.btw_21,0.21,megis-oe.megis-oe_chart_template,False,21% BTW verk,Sales,5,False,Verkopen/omzet hoog*,Percentage of Price
+megis-oe.btw_0,,megis-oe.megis-oe_chart_template,False,0% BTW verk,Sales,10,False,Verkopen/omzet onbelast (nul-tarief)*,Percentage of Price
+megis-oe.btw_6,0.06,megis-oe.megis-oe_chart_template,False,6% BTW verk,Sales,10,False,Verkopen/omzet laag*,Percentage of Price
+megis-oe.btw_6_buy,0.06,megis-oe.megis-oe_chart_template,False,6% BTW ink,Purchases,10,False,BTW te vorderen laag (inkopen)*,Percentage of Price
+megis-oe.btw_6_buy_incl,0.06,megis-oe.megis-oe_chart_template,False,6% BTW ink incl,Purchases,10,True,BTW te vorderen laag (inclusief),Percentage of Price
+megis-oe.btw_overig,0.21,megis-oe.megis-oe_chart_template,False,variabel BTW verk,Sales,15,False,Verkopen/omzet overig*,Percentage of Price
+megis-oe.btw_overig_buy,0.21,megis-oe.megis-oe_chart_template,False,variabel BTW ink,Purchases,15,False,BTW te vorderen overig (inkopen)*,Percentage of Price
+megis-oe.btw_verk_0,,megis-oe.megis-oe_chart_template,False,0% BTW verlegd,Sales,15,False,BTW af te dragen verlegd (verkopen)*,Percentage of Price
+megis-oe.btw_ink_0,0.21,megis-oe.megis-oe_chart_template,False,21% BTW verlegd,Purchases,15,False,BTW af te dragen verlegd (inkopen)*,Percentage of Price
+megis-oe.btw_X1,,megis-oe.megis-oe_chart_template,False,BTW export buiten EU,Sales,20,False,Verkopen export buiten EU*,Percentage of Price
+megis-oe.btw_I_6,0.06,megis-oe.megis-oe_chart_template,False,6% BTW import binnen EU,Purchases,20,False,Inkopen import binnen EU laag*,Percentage of Price
+megis-oe.btw_I_21,0.21,megis-oe.megis-oe_chart_template,False,21% BTW import binnen EU,Purchases,20,False,Inkopen import binnen EU hoog*,Percentage of Price
+megis-oe.btw_I_overig,,megis-oe.megis-oe_chart_template,False,0% BTW import binnen EU,Purchases,20,False,Inkopen import binnen EU overig*,Percentage of Price
+megis-oe.btw_X0,,megis-oe.megis-oe_chart_template,False,BTW export binnen EU,Sales,20,False,Verkopen export binnen EU*,Percentage of Price
+megis-oe.btw_X2,,megis-oe.megis-oe_chart_template,False,Inst./afst.verkopen binnen EU,Sales,20,False,Installatie/afstandsverkopen binnen EU*,Percentage of Price
+megis-oe.btw_E1,0.06,megis-oe.megis-oe_chart_template,False,BTW import buiten EU,Purchases,20,False,Inkopen import buiten EU laag*,Percentage of Price
+megis-oe.btw_E2,0.21,megis-oe.megis-oe_chart_template,False,BTW import buiten EU,Purchases,20,False,Inkopen import buiten EU hoog*,Percentage of Price
+megis-oe.btw_E_overig,0.21,megis-oe.megis-oe_chart_template,False,BTW import buiten EU,Purchases,20,False,Inkopen import buiten EU overig*,Percentage of Price
+megis-oe.btw_ink_0_1,1,megis-oe.megis-oe_chart_template,False,,Purchases,98,False,BTW te vorderen verlegd (inkopen1),Percentage of Price
+megis-oe.btw_I_overig_2,1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import binnen EU overig(2),Percentage of Price
+megis-oe.btw_E2_2,1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import buiten EU hoog(2),Percentage of Price
+megis-oe.btw_E_overig_1,-1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import buiten EU overig(1),Percentage of Price
+megis-oe.btw_E1_1,-1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import buiten EU laag(1),Percentage of Price
+megis-oe.btw_ink_0_2,-1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,BTW af te dragen verlegd (inkopen2),Percentage of Price
+megis-oe.btw_E1_2,1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import buiten EU laag(2),Percentage of Price
+megis-oe.btw_I_6_1,-1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import binnen EU laag(1),Percentage of Price
+megis-oe.btw_I_6_2,1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import binnen EU laag(2),Percentage of Price
+megis-oe.btw_E_overig_2,1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import buiten EU overig(2),Percentage of Price
+megis-oe.btw_I_21_1,-1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import binnen EU hoog(1),Percentage of Price
+megis-oe.btw_I_21_2,1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import binnen EU hoog(2),Percentage of Price
+megis-oe.btw_I_overig_1,-1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import binnen EU overig(1),Percentage of Price
+megis-oe.btw_E2_1,-1,megis-oe.megis-oe_chart_template,False,,Purchases,99,False,Inkopen import buiten EU hoog(1),Percentage of Price

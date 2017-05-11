@@ -1,0 +1,4 @@
+---Fields in module 'megis_improv'---
+---XML records in module 'megis_improv'---
+NEW ir.ui.view: megis_improv.invoice_supplier_formwh1
+NEW ir.ui.view: megis_improv.invoice_treewh1

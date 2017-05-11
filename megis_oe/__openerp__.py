@@ -120,11 +120,11 @@ De extra cijfers worden dan achter het rekeningnummer aangevult met 'nullen'.
     'depends' : ['account',
                  'base_vat',
                  'base_iban',
-                 'account_chart'
+                 # 'account_chart' -- deep
     ],
     'data' : ["account.account.type.csv",
               "account.account.template.csv",
-              "account.tax.code.template.csv",
+              # "account.tax.code.template.csv", -- deprecated in Odoo 9
               'account.chart.template.csv',
               "account.tax.template.csv",
               "account.fiscal.position.template.csv",

@@ -20,29 +20,46 @@
 ##############################################################################
 
 
-from openerp.osv import fields, osv
-from openerp import tools
-from openerp.tools.translate import _
+# from openerp.osv import fields, osv
+# from openerp import tools
+# from openerp.tools.translate import _
+#
+# class account_analytic_line(osv.osv):
+#     _inherit = 'account.analytic.line'
+#     _description = 'Analytic Line'
+#     _columns = {
+#         'regel_naar_slam': fields.boolean('Regel is naar SLAM'),
+#         'datum_naar_slam': fields.date('Datum regel naar SLAM', 'required=False'),
+#     }
+#
+# account_analytic_line()
+#
+# class account_journal(osv.osv):
+#     _inherit = 'account.journal'
+#     _description = 'Journal'
+#     _columns = {
+#         'slam_relevant': fields.boolean('Slam Export', help='If the journal entries of theis journal should be exported to SLAM'),
+#     }
+#
+#     _defaults = {
+#         'slam_relevant': False,
+#     }
+#
+# account_journal()
 
-class account_analytic_line(osv.osv):
+
+from openerp import api, fields, models, _
+
+
+class AnalyticLine(models.Model):
     _inherit = 'account.analytic.line'
-    _description = 'Analytic Line'
-    _columns = {
-        'regel_naar_slam': fields.boolean('Regel is naar SLAM'),
-        'datum_naar_slam': fields.date('Datum regel naar SLAM', 'required=False'),
-    }
 
-account_analytic_line()
+    regel_naar_slam = fields.Boolean('Regel is naar SLAM')
+    datum_naar_slam = fields.Date('Datum regel naar SLAM', required=False)
 
-class account_journal(osv.osv):
+
+class Journal(models.Model):
     _inherit = 'account.journal'
-    _description = 'Journal'
-    _columns = {
-        'slam_relevant': fields.boolean('Slam Export', help='If the journal entries of theis journal should be exported to SLAM'),
-    }
 
-    _defaults = {
-        'slam_relevant': False,
-    }
+    slam_relevant = fields.Boolean('Slam Export', default=False, help='If the journal entries of theis journal should be exported to SLAM')
 
-account_journal()

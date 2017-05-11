@@ -46,16 +46,20 @@
             </field>
         </record>
 	
-	<!-- remove "Pay" button in supplier invoice form -->
-        <record id="view_invoice_supplier_voucher_auth" model="ir.ui.view">
-            <field name="name">megis_auth.invoice.supplier.voucher.inherit</field>
-            <field name="model">account.invoice</field>
-            <field name="inherit_id" ref="account_voucher.view_invoice_supplier"/>
-            <field name="arch" type="xml">
-                    <xpath expr="//button[@name='invoice_pay_customer'][last()]" position="replace">
-                    </xpath>
-            </field>
-        </record>
+	<!-- remove "Pay" button in supplier invoice form
+
+	           *** Deprecated ***
+	-->
+        <!--<record id="view_invoice_supplier_voucher_auth" model="ir.ui.view">-->
+            <!--<field name="name">megis_auth.invoice.supplier.voucher.inherit</field>-->
+            <!--<field name="model">account.invoice</field>-->
+            <!--<field name="inherit_id" ref="account_voucher.view_invoice_supplier"/>-->
+            <!--<field name="arch" type="xml">-->
+                    <!--<xpath expr="//button[@name='invoice_pay_customer'][last()]" position="replace">-->
+                    <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
+
 	<!-- add "Cancel Invoice" button to status "Goedgekeurd" in supplier invoice form -->
         <record id="invoice_supplier_cancel_auth" model="ir.ui.view">
             <field name="name">megis_auth.invoice_supplier_cancel_form_inherit</field>

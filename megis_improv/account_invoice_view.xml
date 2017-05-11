@@ -18,6 +18,7 @@
 		</data>
             </field>
         </record>
+
         <!-- make supplier_invoice_number and account_analytic_id required -->
         <record id="invoice_supplier_formwh1" model="ir.ui.view">
             <field name="name">account.invoice.supplier.form.inherit</field>
@@ -25,10 +26,10 @@
             <field name="inherit_id" ref="account.invoice_supplier_form"/>
             <field name="arch" type="xml">
                     <data>
-			<xpath expr="//group/field[@name='supplier_invoice_number']" position="replace">
-                            <field name="supplier_invoice_number" required="1" groups="account.group_account_invoice"/>
-			    <field name="name" />
-                        </xpath>		    
+			<!--<xpath expr="//group/field[@name='supplier_invoice_number']" position="replace">-->
+                            <!--<field name="supplier_invoice_number" required="1" groups="account.group_account_invoice"/>-->
+			    <!--<field name="name" />-->
+                        <!--</xpath>		    -->
 			<xpath
 			    expr="//field[@name='invoice_line']/tree/field[@name='account_analytic_id']"
 			    position="replace">
