@@ -1,0 +1,44 @@
+---Fields in module 'megis_account_slam'---
+megis_account_slam / account.analytic.line    / account_id (many2one)         : DEL relation: account.analytic.account, required: required
+megis_account_slam / account.analytic.line    / amount (float)                : DEL required: required, req_default: 0.0
+megis_account_slam / account.analytic.line    / code (char)                   : DEL 
+megis_account_slam / account.analytic.line    / date (date)                   : DEL required: required, req_default: function
+megis_account_slam / account.analytic.line    / general_account_id (many2one) : DEL relation: account.account, required: required
+megis_account_slam / account.analytic.line    / journal_id (many2one)         : DEL relation: account.analytic.journal, required: required
+megis_account_slam / account.analytic.line    / move_id (many2one)            : DEL relation: account.move.line
+megis_account_slam / account.analytic.line    / name (char)                   : DEL required: required
+megis_account_slam / account.analytic.line    / product_id (many2one)         : DEL relation: product.product
+megis_account_slam / account.analytic.line    / product_uom_id (many2one)     : DEL relation: product.uom
+megis_account_slam / account.analytic.line    / ref (char)                    : DEL 
+megis_account_slam / account.analytic.line    / unit_amount (float)           : DEL 
+megis_account_slam / account.analytic.line    / user_id (many2one)            : DEL relation: res.users
+megis_account_slam / account.journal          / account_control_ids (many2many): DEL relation: account.account
+megis_account_slam / account.journal          / active (boolean)              : DEL 
+megis_account_slam / account.journal          / allow_date (boolean)          : DEL 
+megis_account_slam / account.journal          / analytic_journal_id (many2one): DEL relation: account.analytic.journal
+megis_account_slam / account.journal          / cash_control (boolean)        : DEL 
+megis_account_slam / account.journal          / cashbox_line_ids (one2many)   : DEL relation: account.journal.cashbox.line
+megis_account_slam / account.journal          / centralisation (boolean)      : DEL 
+megis_account_slam / account.journal          / code (char)                   : DEL required: required
+megis_account_slam / account.journal          / company_id (many2one)         : DEL relation: res.company, required: required, req_default: function
+megis_account_slam / account.journal          / currency (many2one)           : DEL relation: res.currency
+megis_account_slam / account.journal          / default_credit_account_id (many2one): DEL relation: account.account
+megis_account_slam / account.journal          / default_debit_account_id (many2one): DEL relation: account.account
+megis_account_slam / account.journal          / entry_posted (boolean)        : DEL 
+megis_account_slam / account.journal          / group_invoice_lines (boolean) : DEL 
+megis_account_slam / account.journal          / groups_id (many2many)         : DEL relation: res.groups
+megis_account_slam / account.journal          / internal_account_id (many2one): DEL relation: account.account
+megis_account_slam / account.journal          / loss_account_id (many2one)    : DEL relation: account.account
+megis_account_slam / account.journal          / name (char)                   : DEL required: required
+megis_account_slam / account.journal          / profit_account_id (many2one)  : DEL relation: account.account
+megis_account_slam / account.journal          / sequence_id (many2one)        : DEL relation: ir.sequence, required: required
+megis_account_slam / account.journal          / type (selection)              : DEL required: required, selection_keys: ['bank', 'cash', 'general', 'purchase', 'purchase_refund', 'sale', 'sale_refund', 'situation']
+megis_account_slam / account.journal          / type_control_ids (many2many)  : DEL relation: account.account.type
+megis_account_slam / account.journal          / update_posted (boolean)       : DEL 
+megis_account_slam / account.journal          / user_id (many2one)            : DEL relation: res.users
+megis_account_slam / account.journal          / with_last_closing_balance (boolean): DEL 
+---XML records in module 'megis_account_slam'---
+NEW ir.ui.view: megis_account_slam.view_account_analytic_line_form_slam
+NEW ir.ui.view: megis_account_slam.view_account_analytic_line_tree_slam
+NEW ir.ui.view: megis_account_slam.view_account_journal_form_slam
+NEW ir.ui.view: megis_account_slam.view_account_journal_tree_slam

@@ -1,0 +1,32 @@
+---Fields in module 'megis_improv'---
+megis_improv / account.invoice          / account_id (many2one)         : DEL relation: account.account, required: required
+megis_improv / account.invoice          / check_total (float)           : DEL 
+megis_improv / account.invoice          / comment (text)                : DEL 
+megis_improv / account.invoice          / company_id (many2one)         : DEL relation: res.company, required: required, req_default: function
+megis_improv / account.invoice          / currency_id (many2one)        : DEL relation: res.currency, required: required, req_default: function
+megis_improv / account.invoice          / date_due (date)               : DEL 
+megis_improv / account.invoice          / date_invoice (date)           : DEL 
+megis_improv / account.invoice          / fiscal_position (many2one)    : DEL relation: account.fiscal.position
+megis_improv / account.invoice          / internal_number (char)        : DEL 
+megis_improv / account.invoice          / invoice_line (one2many)       : DEL relation: account.invoice.line
+megis_improv / account.invoice          / journal_id (many2one)         : DEL relation: account.journal, required: required, req_default: function
+megis_improv / account.invoice          / message_ids (one2many)        : DEL relation: mail.message
+megis_improv / account.invoice          / move_id (many2one)            : DEL relation: account.move
+megis_improv / account.invoice          / move_name (char)              : DEL 
+megis_improv / account.invoice          / name (char)                   : DEL 
+megis_improv / account.invoice          / origin (char)                 : DEL 
+megis_improv / account.invoice          / partner_bank_id (many2one)    : DEL relation: res.partner.bank
+megis_improv / account.invoice          / partner_id (many2one)         : DEL relation: res.partner, required: required
+megis_improv / account.invoice          / payment_term (many2one)       : DEL relation: account.payment.term
+megis_improv / account.invoice          / period_id (many2one)          : DEL relation: account.period
+megis_improv / account.invoice          / reference (char)              : DEL 
+megis_improv / account.invoice          / reference_type (selection)    : DEL required: required, selection_keys: function, req_default: none
+megis_improv / account.invoice          / sent (boolean)                : DEL 
+megis_improv / account.invoice          / state (selection)             : DEL selection_keys: ['cancel', 'draft', 'open', 'paid', 'proforma', 'proforma2']
+megis_improv / account.invoice          / supplier_invoice_number (char): DEL 
+megis_improv / account.invoice          / tax_line (one2many)           : DEL relation: account.invoice.tax
+megis_improv / account.invoice          / type (selection)              : DEL selection_keys: ['in_invoice', 'in_refund', 'out_invoice', 'out_refund']
+megis_improv / account.invoice          / user_id (many2one)            : DEL relation: res.users
+---XML records in module 'megis_improv'---
+NEW ir.ui.view: megis_improv.invoice_supplier_formwh1
+NEW ir.ui.view: megis_improv.invoice_treewh1
