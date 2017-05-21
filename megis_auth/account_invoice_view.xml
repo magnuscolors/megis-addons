@@ -22,24 +22,24 @@
             <field name="inherit_id" ref="account.invoice_supplier_form"/>
             <field name="arch" type="xml">
                 <data>
-		    <xpath expr="//field[@name='reference_type']" position="replace">
+		            <!--xpath expr="//field[@name='reference_type']" position="replace">
                         <field name="reference_type" class="oe_inline oe_edit_only" groups="account.group_account_invoice"/>
-                    </xpath>
-		    <xpath expr="//field[@name='invoice_line']/tree/field[@name='account_id']" position="replace">
+                    </xpath-->
+		            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="replace">
                         <field name="account_id" groups="account.group_account_invoice,megis_auth.goedk_facturen" 
                                 domain="[('company_id', '=', parent.company_id), ('journal_id', '=', parent.journal_id), ('type', '=', 'other')]"
-                                on_change="onchange_account_id(product_id, parent.partner_id, parent.type, parent.fiscal_position,account_id)"/>
+                                on_change="onchange_account_id(product_id, parent.partner_id, parent.type, parent.fiscal_position_id,account_id)"/>
                     </xpath>
-		    <xpath expr="//header/button[@name='invoice_open']" position="after">
-			<button name="invoice_auth" states="open" string="Authorize" class="oe_highlight" groups="account.group_account_user"/>
+		            <xpath expr="//header/button[@name='invoice_open']" position="after">
+			            <button name="invoice_auth" states="open" string="Authorize" class="oe_highlight" groups="account.group_account_user"/>
                     </xpath>
-		    <xpath expr="//header/button[@name='invoice_auth']" position="after">
+		            <xpath expr="//header/button[@name='invoice_auth']" position="after">
                         <button name="unauthorize" states="auth" string="Re-open" class="oe_highlight" groups="account.group_account_user"/>
                     </xpath>
                     <xpath expr="//header/button[@name='%(account.action_account_invoice_refund)d']" position="replace">
                         <button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' states='open,auth,paid' groups="account.group_account_invoice"/>
                     </xpath>
-		    <xpath expr="//header/field[@name='state']"	position="replace">
+		            <xpath expr="//header/field[@name='state']"	position="replace">
                         <field name="state" widget="statusbar" statusbar_visible="draft,auth,open,paid" statusbar_colors='{"proforma":"blue","proforma2":"blue"}'/>
                     </xpath>
                 </data>
