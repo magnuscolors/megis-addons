@@ -22,17 +22,8 @@
 #
 ##############################################################################
 
-# from openerp.osv import fields, orm
-from openerp import api, fields, models, _
+from odoo import api, fields, models, _
 
-
-# class account_invoice(orm.Model):
-#     _inherit = "account.invoice"
-#     _columns = {
-#         'internal_number': fields.char(
-#             'Invoice Number', size=32, readonly=True,
-#             states={'draft': [('readonly', False)]}),
-#     }
 
 
 

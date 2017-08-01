@@ -19,12 +19,14 @@
 #
 ##############################################################################
 
-from openerp.osv import osv
-from openerp.tools.translate import _
-from openerp import netsvc
-from openerp import pooler
+# from odoo.osv import orm
+from odoo.tools.translate import _
+from odoo import netsvc
+from odoo import pooler
+from odoo import models, fields, api
 
-class account_invoice_author(osv.osv_memory):
+
+class AccountInvoiceAuthor(models.TransientModel):
     """
     This wizard will authorize  all the selected open invoices for payment
     """

@@ -19,24 +19,20 @@
 #
 ##############################################################################
 
-import time
-from lxml import etree
-import openerp.addons.decimal_precision as dp
-import openerp.exceptions
+# import time
+# from lxml import etree
+# import odoo.addons.decimal_precision as dp
+# import odoo.exceptions
 
-from openerp import netsvc
-from openerp import pooler
-from openerp.osv import fields, osv, orm
-from openerp.tools.translate import _
+# from odoo.osv import orm
+# from odoo.tools.translate import _
 
-from openerp import models, fields as fields2, api
-
-class account_invoice(osv.osv):
+from odoo import models, fields, api
+class AccountInvoice(models.Model):
     """ Inherits invoice and adds state "auth" to supplier invoice workflow """
     _inherit = 'account.invoice'
 
-    _columns = {
-        'state': fields.selection([
+    state = fields.Selection([
             ('draft','Draft'),
             ('proforma','Pro-forma'),   
             ('proforma2','Pro-forma'),
@@ -50,17 +46,15 @@ class account_invoice(osv.osv):
             \n* The \'Goedgekeurd\' status is used when invoice is already posted, but not yet confirmed for payment. \
             \n* The \'Open\' status is used when user create invoice,a invoice number is generated.Its in open status till user does not pay invoice. \
             \n* The \'Paid\' status is set automatically when the invoice is paid. Its related journal entries may or may not be reconciled. \
-            \n* The \'Cancelled\' status is used when user cancel invoice.'),
-        'payment_term': fields.many2one('account.payment.term', 'Payment Terms',readonly=True, states={'draft':[('readonly',False)]},
+            \n* The \'Cancelled\' status is used when user cancel invoice.')
+    payment_term = fields.Many2one('account.payment.term', 'Payment Terms',readonly=True, states={'draft':[('readonly',False)]},
             help="If you use payment terms, the due date will be computed automatically at the generation "\
                 "of accounting entries. If you keep the payment term and the due date empty, it means direct payment. "\
-                "The payment term may compute several due dates, for example 50% now, 50% in one month.", groups="account.group_account_invoice"),
-        'user_id': fields.many2one('res.users', 'Salesperson', readonly=True, track_visibility='onchange', states={'draft':[('readonly',False)],'open':[('readonly',False)]}),
-        'reference': fields.char('Invoice Reference', size=64, help="The partner reference of this invoice.", groups="account.group_account_invoice"),
-        'amount_to_pay': fields.related('residual',
-            type='float', string='Amount to be paid',
-            help='The amount which should be paid at the current date.', groups="account.group_account_invoice"),
-    }    
+                "The payment term may compute several due dates, for example 50% now, 50% in one month.", groups="account.group_account_invoice")
+    user_id = fields.Many2one('res.users', 'Salesperson', readonly=True, track_visibility='onchange', states={'draft':[('readonly',False)],'open':[('readonly',False)]})
+    reference = fields.Char('Invoice Reference', size=64, help="The partner reference of this invoice.", groups="account.group_account_invoice")
+    amount_to_pay = fields.Float(related='residual', string='Amount to be paid',
+            help='The amount which should be paid at the current date.', groups="account.group_account_invoice")
         
 
     # def action_date_assign(self, cr, uid, ids, *args):
@@ -235,10 +229,11 @@ class account_invoice(osv.osv):
     #         move_obj.post(cr, uid, [move_id], context=ctx)
     #     self._log_event(cr, uid, ids)
     #     return True
-    
-    def invoice_validate(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'state':'open'}, context=context)
-        return super(account_invoice, self).invoice_validate(cr, uid, ids, context=context)
+
+    @api.multi
+    def invoice_validate(self):
+        self.write({'state':'open'})
+        return super(account_invoice, self).invoice_validate()
 
 
 # added by -- deep
