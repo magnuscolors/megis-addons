@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="action_wiz_migrationfix" model="ir.actions.server">
+            <field name="name">Migration Fixes: Invoice</field>
+            <field name="model_id" ref="model_account_invoice"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">action = self.pool.get('wiz.migration.fix').recompute_InvoiceTotals(cr, uid, [])</field>
+        </record>
+
+    </data>
+</openerp>
