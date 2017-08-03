@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <!-- show supplier_invoice_number in invoice tree -->
         <record id="invoice_treewh1" model="ir.ui.view">
@@ -41,5 +41,5 @@
         </record>
         
     </data>
-</openerp>
+</odoo>
 

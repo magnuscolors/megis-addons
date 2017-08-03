@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2013 Megis - Willem Hulshof - www.megis.nl
+# Copyright (c) 2013 Magnus - Willem Hulshof - www.magnus.nl
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -36,8 +36,8 @@ This module changes some fields in invoices views in OpenERP.
 
 
     """,
-    'author'  : 'Eurogroup Consulting - Willem Hulshof',
-    'website' : 'http://www.eurogroupconsulting.nl',
+    'author'  : 'Magnus - Willem Hulshof',
+    'website' : 'http://www.magnus.nl',
     'depends' : ['account'
     ],
     'data' : ["account_invoice_view.xml"

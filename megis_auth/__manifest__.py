@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2013 Megis - Willem Hulshof - www.megis.nl
+# Copyright (c) 2013 Magnus - Willem Hulshof - www.magnus.nl
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -28,7 +28,7 @@
 
 {
     'name' : 'megis_auth',
-    'version' : '0.9',
+    'version' : '10.0',
     'category': 'workflow',
     'description': """
 This module adds authorization step in workflow in supplier invoices in OpenERP.
@@ -36,22 +36,21 @@ This module adds authorization step in workflow in supplier invoices in OpenERP.
 
 
     """,
-    'author'  : 'Eurogroup Consulting - Willem Hulshof',
-    'website' : 'http://www.eurogroupconsulting.nl',
+    'author'  : 'Magnus - Willem Hulshof',
+    'website' : 'http://www.magnus.nl',
     'depends' : ['account',
-		'account_cancel',
-		'account_voucher',
-		# 'account_banking_payment', -- deep
-         "account_payment_order", # -- added: deep
-         "project",
+		         'account_cancel',
+		         'account_voucher',
+                 "account_payment_order", # -- added: deep
+                 "project",
     ],
-    'data' : ["account_security.xml",
-	      "account_invoice_view.xml",
-              "account_invoice_workflow.xml",
-              "account_invoice_state_view.xml",
-              "ir.model.access.csv",
+    'data' :    ["account_security.xml",
+	             "account_invoice_view.xml",
+                 "account_invoice_workflow.xml",
+                 "account_invoice_state_view.xml",
+                 "ir.model.access.csv",
     ],
-    'demo' : [],
+    'demo' :    [],
     'installable': True
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

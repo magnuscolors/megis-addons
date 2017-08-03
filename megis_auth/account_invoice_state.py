@@ -34,10 +34,8 @@ class AccountInvoiceAuthor(models.TransientModel):
     _name = "account.invoice.author"
     _description = "Authorize the selected invoices"
 
-    def invoice_author(self, cr, uid, ids, context=None):
-        wf_service = netsvc.LocalService('workflow')
-        if context is None:
-            context = {}
+    @api.multi
+    def invoice_author(self):
         pool_obj = pooler.get_pool(cr.dbname)
         data_inv = pool_obj.get('account.invoice').read(cr, uid, context['active_ids'], ['state'], context=context)
 
@@ -47,7 +45,6 @@ class AccountInvoiceAuthor(models.TransientModel):
             wf_service.trg_validate(uid, 'account.invoice', record['id'], 'invoice_auth', cr)
         return {'type': 'ir.actions.act_window_close'}
 
-account_invoice_author()
 
 
 
