@@ -35,4 +35,4 @@ class MigrationFix(models.TransientModel):
 
             for ln in inv.invoice_line_ids:
                 ln.write({'quantity': ln.quantity})
-        _logger.info("______________ End of Computing _________________")
+        _logger.info("______________ End of Computing ___________________")
